@@ -1,8 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #000; /* solid black background, images removed */
-  color: white;
+  background-color:linear-gradient(to bottom, #000000, #200000);
+  color: #ffffff;
   font-size: 14px;
   font-family: sans-serif;
   overflow: auto;
@@ -80,5 +80,6 @@ a {
   margin-top:450px;
   font-size: 25px;
   font-family: monospace;
+
 
 }
