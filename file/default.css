@@ -4,7 +4,7 @@ body {
   background-color:linear-gradient(to bottom, #000000, #200000);
   color: #ffffff;
   font-size: 14px;
-  font-family: sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow: auto;
 }
 a {
@@ -33,9 +33,16 @@ a {
   color: rgb(196, 255, 255);
   font-size: 16px;
   margin-top: 70px;
-  line-height: 25px;
+  line-height: 1.8;
   font-size: larger;
   font-weight: bolder;
+  animation: fadeIn 2s ease-in-out;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+  
 }
 #clock-box {
   position: absolute;
@@ -83,4 +90,5 @@ a {
 
 
 }
+
 
