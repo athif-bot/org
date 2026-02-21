@@ -4,7 +4,7 @@ body {
   background: linear-gradient(135deg, #000000, #111827, #000000);
   color: #ffffff;
   font-family: 'Poppins', sans-serif;
-  overflow-x: hidden; /* prevent horizontal scroll on phones */
+  overflow: auto;
 }
 
 /* Links */
@@ -19,29 +19,19 @@ a {
   width: 100%;
 }
 
-/* Wrap container responsive */
 #wrap {
   position: relative;
   margin: 0 auto;
-  width: 90%;       /* responsive width */
-  max-width: 1100px;
-  height: auto;     /* adapt height for small screens */
+  width: 1100px;
+  height: 680px;
   margin-top: 10px;
-  transform: rotate(-2deg); /* tilt effect */
-  transition: transform 0.7s ease-in-out;
 }
 
-body.loaded #wrap {
-  transform: rotate(0deg); /* straighten after page load */
-}
-
-/* Text box responsive */
 #text {
-  width: 80%;       /* relative width for small screens */
-  max-width: 300px;
-  height: auto;
-  left: 5%;         /* relative positioning */
-  top: 5%;
+  width: 300px;
+  height: 560px;
+  left: 160px;
+  top: 80px;
   position: absolute;
 }
 
@@ -49,9 +39,9 @@ body.loaded #wrap {
 #code {
   display: none;
   color: #ffccd5;
-  font-size: 18px;  /* slightly smaller on phones */
-  margin-top: 20px;
-  line-height: 1.8;
+  font-size: 20px;
+  margin-top: 70px;
+  line-height: 2;
   font-weight: 600;
   animation: fadeIn 2s ease-in-out;
   text-shadow: 0 0 12px rgba(255, 105, 180, 0.6);
@@ -66,33 +56,28 @@ body.loaded #wrap {
 /* Clock */
 #clock-box {
   position: absolute;
-  left: 5%;
-  top: auto;
-  bottom: 10px;
-  font-size: 20px;  /* scale down for mobile */
+  left: 60px;
+  top: 550px;
+  font-size: 28px;
   display: none;
   color: #ffb6c1;
 }
 
 #clock {
-  margin-left: 0;
-  font-size: 20px;
+  margin-left: 48px;
 }
 
 #clock .digit {
-  font-size: 32px;
+  font-size: 64px;
 }
 
-/* Canvas responsive */
+/* Canvas */
 #canvas {
-  display: block;
   margin: 0 auto;
-  width: 100%;   /* scale canvas width */
-  height: auto;
-  max-height: 680px;
+  width: 1100px;
+  height: 680px;
 }
 
-/* Error message */
 #error {
   margin: 0 auto;
   text-align: center;
@@ -109,14 +94,14 @@ body.loaded #wrap {
 }
 
 .space {
-  margin-right: 0; /* reduce extra spacing on mobile */
+  margin-right: 150px;
 }
 
 /* Message Box */
 #message-box {
   position: absolute;
   margin-top: 450px;
-  font-size: 20px;
+  font-size: 25px;
   font-family: monospace;
   color: #ffccd5;
   text-shadow: 0 0 8px rgba(255, 182, 193, 0.7);
@@ -131,60 +116,33 @@ body.loaded #wrap {
   height: 100%;
   pointer-events: none;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 9999; /* Ensures sparkles appear above everything */
 }
 
 .sparkle {
   position: absolute;
-  width: 7px;
+  width: 7px; /* slightly bigger for visibility */
   height: 7px;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 1); /* fully opaque */
   border-radius: 50%;
   box-shadow: 
     0 0 15px rgba(255, 255, 255, 1), 
     0 0 30px #ff69b4, 
-    0 0 20px #ffe4e1;
+    0 0 20px #ffe4e1; /* more glow & subtle color mix */
   animation: floatUp linear forwards;
 }
 
 @keyframes floatUp {
   from {
     transform: translateY(100vh) scale(0.6);
-    opacity: 0.8;
+    opacity: 0.8; /* start slightly transparent */
   }
   to {
     transform: translateY(-10vh) scale(1);
-    opacity: 1;
+    opacity: 1; /* fully visible at top */
   }
 }
 
-/* Responsive adjustments for small screens */
-@media screen and (max-width: 600px) {
-  #text {
-    width: 90%;
-    left: 5%;
-    top: 5%;
-  }
-
-  #code {
-    font-size: 16px;
-    margin-top: 15px;
-  }
-
-  #clock-box {
-    font-size: 18px;
-    left: 5%;
-    bottom: 5px;
-  }
-
-  #clock .digit {
-    font-size: 28px;
-  }
-
-  #wrap {
-    width: 95%;
-  }
-}
 
 
 
