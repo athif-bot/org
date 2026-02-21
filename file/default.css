@@ -121,22 +121,28 @@ a {
 
 .sparkle {
   position: absolute;
-  width: 6px;
-  height: 6px;
-  background: #ffffff;
+  width: 7px; /* slightly bigger for visibility */
+  height: 7px;
+  background: rgba(255, 255, 255, 1); /* fully opaque */
   border-radius: 50%;
-  box-shadow: 0 0 10px #ffffff, 0 0 20px #ff69b4;
+  box-shadow: 
+    0 0 15px rgba(255, 255, 255, 1), 
+    0 0 30px #ff69b4, 
+    0 0 20px #ffe4e1; /* more glow & subtle color mix */
   animation: floatUp linear forwards;
 }
 
 @keyframes floatUp {
   from {
-    transform: translateY(100vh) scale(0.5);
+    transform: translateY(100vh) scale(0.6);
+    opacity: 0.8; /* start slightly transparent */
   }
   to {
     transform: translateY(-10vh) scale(1);
+    opacity: 1; /* fully visible at top */
   }
 }
+
 
 
 
